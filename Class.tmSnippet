@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>Class "${1:${TM_FILENAME/(\w+).*/$1/}}"
+    init do
+        endItem
+
+    Macro "${2}" (${3}) do
+        endItem
+	endClass
+</string>
+	<key>name</key>
+	<string>Class</string>
+	<key>scope</key>
+	<string>source.GISDK</string>
+	<key>tabTrigger</key>
+	<string>cl</string>
+	<key>uuid</key>
+	<string>EE520968-3752-48F4-AE65-765B1396A7F6</string>
+</dict>
+</plist>

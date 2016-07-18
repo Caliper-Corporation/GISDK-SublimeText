@@ -1,0 +1,10 @@
+{
+		"scope": "source.GISDK - macro",
+        "completions":
+        [
+				{ "trigger": "abs", "contents": "abs(${1:number})" },
+				{"trigger":"RunMacro","contents":"RunMacro(\"${1}\",${2},${3})"},
+				{"trigger":"RunDbox","contents":"RunDbox(\"${1}\",${2},${3})"},
+				{"trigger":"ArrayPosition","contents":"ArrayPosition(${1},${2},${3})"}
+        ]
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>Class "Test${1:${TM_FILENAME/(\w+).*/$1/}}" inherits: "UnitTest"
+    Macro "Setup" do
+        self.SUT = CreateObject("${1/(\w+).*/$1/}")
+        endItem
+
+    Macro "Teardown" do
+        self.SUT = null
+        endItem
+
+    Macro "testAction" do
+        endItem
+endClass
+</string>
+	<key>name</key>
+	<string>Test Class</string>
+	<key>scope</key>
+	<string>source.GISDK</string>
+	<key>tabTrigger</key>
+	<string>tc</string>
+	<key>uuid</key>
+	<string>CE5912EB-2077-44F8-A547-7DDB6AE52248</string>
+</dict>
+</plist>

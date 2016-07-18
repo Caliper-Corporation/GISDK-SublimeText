@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>Macro "${1}"
+	mgr = RunMacro("G30 Get Toolbox Controller",  "${1}")
+    if mgr = null then do
+        opts = null
+        opts.Title =  "${2}"
+        mgr = CreateObject("${3}", "${1}", opts)
+        if mgr = null then
+            Return()
+        else if mgr.Status = "Quit" then do
+            mgr = null
+            Return()
+            end
+        end
+    else if !mgr.closeup() then return ()
+    mgr.Toggle()
+EndMacro
+
+Class "${3}"(dbox_name, opts)
+inherits: "G30 toolbox controller", dbox_name, opts
+    init do
+        endItem
+
+    Macro "Ok" do
+        endItem
+    
+    Macro "closeup" do
+        return(true)
+        endItem
+endClass 
+
+DBox "${1}"(mgr) toolbox 
+    title: mgr.title
+    help: mgr.HelpTopic
+    location: center, center
+  
+    init do
+        enditem
+    
+    Close do
+        if mgr.closeup() & mgr.Close() then Return()
+        endItem 
+
+    Button "OK" 40, 1, 9 default do
+        if mgr.Ok() then 
+            Return()
+        endItem
+
+    Button "Cancel" same, 3, 9 cancel do Return() enditem
+endDBox
+</string>
+	<key>name</key>
+	<string>OODbox</string>
+	<key>scope</key>
+	<string>source.GISDK</string>
+	<key>tabTrigger</key>
+	<string>ood</string>
+	<key>uuid</key>
+	<string>EE520968-3752-48F4-AE65-765B1396A7F6</string>
+</dict>
+</plist>
