@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Symbol List: Menu</string>
+	<key>scope</key>
+	<string>source.GISDK entity.name.menu</string>
+	<key>settings</key>
+	<dict>
+		<key>showInIndexedSymbolList</key>
+		<integer>1</integer>
+		<key>symbolIndexTransformation</key>
+		<string>s/"(.*?)"/$1/;
+   		</string>
+		<key>showInSymbolList</key>
+		<integer>1</integer>
+		<key>symbolTransformation</key>
+		<string>s/(.*)/Menu "$1"/;
+   </string>
+	</dict>
+	<key>uuid</key>
+	<string>594E591A-E6D7-4388-B799-0E2C2CBFDC7F</string>
+</dict>
+</plist>
